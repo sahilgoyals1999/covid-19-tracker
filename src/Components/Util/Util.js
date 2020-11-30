@@ -4,14 +4,17 @@ import { Circle, Popup } from "react-leaflet";
 
 // hex => color
 const casesTypeColors = {
-  "cases": {
-    multiplier: 400,
-  },
-  "recovered": {
+  cases: {
     multiplier: 600,
+    option: { color:"#cc1034", fillColor: "#cc1034" },
   },
-  "deaths": {
-    multiplier: 800,
+  recovered: {
+    multiplier: 600,
+    option: { color:"#7dd71d", fillColor: "#7dd71d" },
+  },
+  deaths: {
+    multiplier: 1200,
+    option: { color:"#ff6c47", fillColor: "#ff6c47" }
   },
 };
 
@@ -24,18 +27,16 @@ export const prettyPrintStat = (stat) =>
   stat ? `+${numeral(stat).format("0.0a")}` : "+0";
 
 // by default casesType is casses
-export const showDataOnMap = (data, casesType = "cases", color_graph, color_b_graph) =>
+export const showDataOnMap = (data, casesType = "cases") =>
   data.map(country => (
     <Circle
-    key={country.country}
-      center={[country.countryInfo.lat, country.countryInfo.long]}
-      color={color_graph}
-      fillColor={color_b_graph}
-      fillOpacity={0.4}
-      radius = {
-        Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
-      }
-    >
+          center={[country.countryInfo.lat, country.countryInfo.long]}
+          fillOpacity={0.4}
+          pathOptions={casesTypeColors[casesType].option}
+          radius={
+            Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
+          }
+        >
       <Popup>
         <div className="info-container">
         <div className="info-main">

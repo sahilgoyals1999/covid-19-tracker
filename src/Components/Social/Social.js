@@ -15,29 +15,22 @@ const Social = () => {
 		 <Typography variant="h4">Contact Me</Typography>
 		</center>
 		<div className="social">
-			<a 
-			 target="_blank"
-			 rel="noreferrer"
+			<a
 			 style={{ color: '#0e76a8'}} 
 			 href="https://www.linkedin.com/in/sahil-goyal-138b96175/">
 			 <LinkedInIcon colorAction fontSize='large'/>
 			</a>
-			<a 
-			 target="_blank" 
-			 rel="noreferrer"
+			<a
 			 style={{ margin: '0 8px', color: '#333'}} 
 			 href="https://github.com/sahilgoyals1999">
 			 <GitHubIcon fontSize='large'/>
 			</a>
-			<a 
-			 target="_blank" 
-			 rel="noreferrer"
+			<a
 			 style={{ margin: '0 8px', color: '#E1306C'}} 
 			 href="https://www.instagram.com/sahil.goyal25/">
 			 <InstagramIcon fontSize='large'/>
 			</a>
-			<a 
-			 target="_blank" 
+			<a
 			 style={{ margin: '0 8px', color: '#3b5998'}} 
 			 href="https://m.facebook.com/sahil.goyal.35762">
 			 <FacebookIcon fontSize='large'/>
